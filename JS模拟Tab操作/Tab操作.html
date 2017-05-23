@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- css代码部分 -->
+        <style type="text/css">
+        	*{
+        		margin: 0px;
+        		padding: 0px;
+        	}
+        	.content{
+        		width: 500px;
+        		height: 300px;
+        		border: 1px solid #ccc;
+        		border-top: none;
+        		display: none;
+        	}
+        	.content a{
+        		display: block;
+        		padding: 20px;
+        	}
+        	.nav{
+        		width: 502px;
+        		height: 30px;
+        		background-color: #ddd;
+
+        	}
+        	.nav span{
+        		width: 80px;
+        		height: 30px;
+        		display: block;
+        		float: left;
+        		text-align: center;
+        		line-height: 30px;
+        		border: 1px solid #fff;
+        		border-bottom: none;
+        	}
+        	.bg{
+        		background-color: red;
+        	}
+        	.changebg{
+        		background-color: green;
+        	}
+			
+        </style>
+
+        
+    </head>
+    <!-- html代码部分 -->
+    <body>
+    	<!-- 导航标签 -->
+		<div class="nav">
+			<span id="nav1" class="bg" onclick="ChangeDiv('1')">标签一</span>
+			<span id="nav2" class="changebg" onclick="ChangeDiv('2')">标签二</span>
+			<span id="nav3" class="changebg" onclick="ChangeDiv('3')">标签三</span>
+		</div>
+
+		<!-- 内容部分 -->
+		<div id="div1" class="content" style="display:block;"><a href="">内容一</a></div>
+		<div id="div2" class="content"><a href="">内容二</a></div>
+		<div id="div3" class="content"><a href="">内容三</a></div>
+        <!-- js代码部分 -->
+		<script>
+		        function ChangeDiv(divid){
+		        	for(i=1;i<=3;i++){
+		        		document.getElementById('nav'+i).className="bg";
+		        		
+		        		document.getElementById('div'+i).style.display="none";
+		        	}
+		        		document.getElementById('nav'+divid).className="changebg";
+                        document.getElementById('div'+divid).style.display="block";
+
+		        }
+		</script>
+
+		
+    </body>
+</html>
